@@ -1,12 +1,14 @@
+// Konami Code
 const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
-const init = function() {
+function init() {
   const context = document.body
   let index = 0
 
   const onKeyDownHandler = function(current_key) {
+
     const key = parseInt(current_key.detail || current_key.which)
-    console.log(`pressed: ${key}`);
+    console.log(`pressed: ${current_key.code} (${key})`);
 
     if (key === code[index]) {
       index++
